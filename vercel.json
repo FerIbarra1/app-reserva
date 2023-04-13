@@ -3,7 +3,7 @@
     "outputDirectory": "app-reserva/dist",
     "framework": "vite",
     "rewrites": [
-        {
+        { 
             "source": "/api/(.*)",
             "destination": "/api/index.js"
         }

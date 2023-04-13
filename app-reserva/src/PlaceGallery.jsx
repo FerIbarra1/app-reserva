@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Image } from "./Image";
 
 export const PlaceGallery = ({ place }) => {
     const [showAllPhotos, setShowAllPhotos] = useState(false);
@@ -19,7 +20,7 @@ export const PlaceGallery = ({ place }) => {
                     </div>
                     {place?.photos?.length > 0 && place.photos.map(photo => (
                         <div>
-                            <img src={'http://localhost:4000/uploads/' + photo} alt="" />
+                            <Image src={photo} alt="" />
                         </div>
                     ))}
                 </div>
@@ -33,17 +34,17 @@ export const PlaceGallery = ({ place }) => {
                 <div>
                     {place.photos?.[0] && (
                         <div>
-                            <img onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover" src={'http://localhost:4000/uploads/' + place.photos[0]} />
+                            <Image onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover" src={place.photos[0]} />
                         </div>
                     )}
                 </div>
                 <div className="grid">
                     {place.photos?.[1] && (
-                        <img onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover" src={'http://localhost:4000/uploads/' + place.photos[1]} />
+                        <Image onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover" src={place.photos[1]} />
                     )}
                     <div className="overflow-hidden">
                         {place.photos?.[2] && (
-                            <img onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover relative top-2" src={'http://localhost:4000/uploads/' + place.photos[2]} />
+                            <Image onClick={() => setShowAllPhotos(true)} className="aspect-square cursor-pointer object-cover relative top-2" src={place.photos[2]} />
                         )}
                     </div>
                 </div>
